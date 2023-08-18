@@ -1,0 +1,44 @@
+# net-list test file for a basic tablet power distribution
+
+srcVoltage      charger         dc_in                       vLow =  12V
+cnvBuck         u1              dc_in       p4v0            vTgt = 4V   vRev = 15V
+
+srcVoltage      battery         bat_in                      vLow = 4.2V
+cnvCntSwitch    sw1             bat_in      p4v0    dc_in   vTrMn = -1V vTrMx=4V
+
+cnvBoost        u2              p4v0        p8v0            vTgt = 8V
+drnCurrent      backlight       p8v0                        iTgt = 80mA
+drnPower        audio           p8v0                        pTgt = 3W
+
+cnvBuck         u3              p4v0        p1v8            vTgt = 1.8V  vMin = 3V
+
+drnCurrent      up_io           p1v8                        iTgt = 30mA
+drnCurrent      ram             p1v8                        iTgt = 20mA
+drnCurrent      from            p1v8                        iTgt = 100mA
+
+cnvLDO          u4              p1v8        p1v0            vTgt = 1.0V
+drnCurrent      up_core         p1v0                        iTgt = 350mA    vMin = 0.5V
+
+simulateTransient tEnd = 3ms
+
+draw tablet outputFormat = svg
+
+plot turnOn TIME, p4v0, p1v8, p1v0
+plot turnOnc TIME, p1v8, u3.1
+print u3.1
+
+#the following commands would print in csv file to be loaded in a spreadsheet
+#plot turnOndata TIME, u3.0, u3.1 outputFormat = csv
+#plot turnOndata2 TIME, p4v0, p1v8, u3.0, u3.1 outputFormat = csv
+#plot turnOndata3 TIME, p4v0, p1v8, p1v0, u4.0, u4.1, u3.0, u3.1 outputFormat = csv
+
+#the charger voltage is removed and the circuit is simulated again
+modify charger vLow  = 0
+simulateTransient tEnd = 3ms
+draw tabletBB outputFormat = pdf
+plot turnOnBB TIME, p4v0, p1v8, p1v0
+
+
+print u3
+
+quit

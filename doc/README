@@ -1,0 +1,6 @@
+To understand Pentode functionality read PentodeIntroduction2.pdf slide show
+
+To test Pentode on the netlist tablet run the following command (you need to have java installed on your machine):
+
+java -jar pentode.jar tablet.ptd
+

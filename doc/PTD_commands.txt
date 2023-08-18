@@ -1,0 +1,679 @@
+Helping: the following list show the components available: 
+
+-Name = break
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER = (default 1.0 ) the condition checked not-equal to 0. will break the current loop going to its end 
+-Type = Command
+-Function = ends the current iteration blok (do-loop, if-iEnd, while-wEnd, for-next)
+
+-Name = cnvBoost
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, pOut, iIn, iOut, vTgt ) the list of parameter to show in the power tree drawing 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIMax = (default 10.0A ) the maximum input current 
+--iIn = (read only) the input current 
+--iOff = (default 1.0uA ) the input current when the device is disabled 
+--iOut = (read only) the output current 
+--iPfm = (default 10.0mA ) the minimum current below which the frequency is reduced and the switching current decreases proportionally 
+--iQst = (default 1.0mA ) the baseline current to supply the converter circuitry 
+--iRev = (default 1.0uA ) the diode reverse current 
+--iSwt = (default 2.5mA ) the current required for switching  
+--lbl = (read only) the component label 
+--lnRgl = (default 10.0m% ) the line regulation dVout/dVin in percentage 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 2000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--rLdRg = (default 100.0mOhm ) the load regulation expressed as resistance 
+--rSwt = (default 200.0mOhm ) the switching circuit resistance 
+--vFrw = (default 500.0mV ) the diode forward voltage 
+--vMin = (default 1.5V ) the minimum startup voltage 
+--vTgt =  (must be defined) the output target voltage 
+-Type = Electric Component
+-Number of gates = 2
+-Class = converter
+-Function = is a switching boost converter
+
+-Name = cnvBuck
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, pOut, iIn, iOut, vTgt ) the list of parameter to show in the power tree drawing 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIn = (read only) the input current 
+--iOMax = (default 4.0A ) the maximum output current 
+--iOff = (default 1.0uA ) the input current when the device is disabled 
+--iOut = (read only) the output current 
+--iPfm = (default 10.0mA ) the minimum current below which the frequency is reduced and the switching current decreases proportionally 
+--iQst = (default 1.0mA ) the baseline current to supply the converter circuitry 
+--iSwt = (default 2.5mA ) the current required for switching  
+--lbl = (read only) the component label 
+--lnRgl = (default 10.0m% ) the line regulation dVout/dVin in percentage 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 2000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--rLdRg = (default 100.0mOhm ) the load regulation expressed as resistance 
+--rRev = (default 1.0Ohm ) the high side parassitic diode forward resistance 
+--rSwt = (default 200.0mOhm ) the switching circuit resistance 
+--vMin = (default 1.5V ) the minimum startup voltage 
+--vRev = (default 1.0V ) the high side parassitic diode forward voltage 
+--vTgt =  (must be defined) the output target voltage 
+-Type = Electric Component
+-Number of gates = 2
+-Class = converter
+-Function = is a switching buck converter
+
+-Name = cnvCntSwitch
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, pOut, iIn, iOut, vTrMn, vTrMx ) the list of parameter to show in the power tree drawing 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIn = (read only) the input current 
+--iMax = (default 10.0A ) switch maximum forward current used only for warnings (not for simulation) 
+--iOff = (default 1.0uA ) the input current when the device is disabled 
+--iOut = (read only) the output current 
+--iQst = (default 1.0mA ) the current required to supply the switch circuitry 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 2000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--rRev = (default 1.0Ohm ) the parassitic diode forward resistance 
+--res = (default 50.0mOhm ) the on resistance 
+--vMin = (default 2.0V ) the minimum operative input voltage 
+--vRev = (default 1.0V ) the parassitic diode forward voltage 
+--vTrMn = (default 1.0V ) the low threshold voltage, it is active above it 
+--vTrMx = (default 10.0V ) the high threshold voltage, it is active below it 
+-Type = Electric Component
+-Number of gates = 3
+-Class = converter
+-Class = voltage controlled converter
+-Function = is voltage controlled switch. The third node is the gate. The switch is controlled by the gate voltage. The switch is closed if the voltage at the third node it between vTrMn and vTrMx
+
+-Name = cnvDiode
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, pOut, iIn, iOut, vFrw ) the list of parameter to show in the power tree drawing 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIn = (read only) the input current 
+--iMax = (default 10.0A ) diode maximum forward current used only for warnings (not for simulation) 
+--iOff = (default 1.0uA ) the input current when the device is disabled 
+--iOut = (read only) the output current 
+--iRev = (default 1.0uA ) diode reverse leakage current 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 2000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--rFrw = (default 300.0mOhm ) diode forward resistance 
+--vFrw = (default 600.0mV ) diode forward voltage 
+-Type = Electric Component
+-Number of gates = 2
+-Class = converter
+-Function = is a diode
+
+-Name = cnvInductor
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, pOut, iIn, iOut, ind ) the list of parameter to show in the power tree drawing 
+--enb = (default true ) to enable or disable the device (true|false)
+--iBgn = (default 0.0A ) simulation starting current 
+--iIn = (read only) the input current 
+--iMax = (default 10.0A ) inductor maximum forward current used only for warnings (not for simulation) 
+--iOff = (default 1.0uA ) the input current when the device is disabled 
+--iOut = (read only) the output current 
+--ind =  (must be defined) inductance value 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 2000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--res = (default 0.0Ohm ) inductance series resistance 
+-Type = Electric Component
+-Number of gates = 2
+-Class = converter
+-Function = is an inductor modeled by an ideal inductor in series to a resistor.
+
+-Name = cnvLDO
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, pOut, iIn, iOut, vTgt ) the list of parameter to show in the power tree drawing 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIn = (read only) the input current 
+--iMax = (default 1.0A ) the maximum output current 
+--iOff = (default 1.0uA ) the input current when the device is disabled 
+--iOut = (read only) the output current 
+--iQst = (default 1.0mA ) the device baseline supply current 
+--lbl = (read only) the component label 
+--lnRgl = (default 10.0m% ) the line regulation dVout/dVin in percentage 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pMax = (default 10.0W ) the maximum power dissipable 
+--pOut = (read only) the output power 
+--pltPr = (default 2000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--rFrw = (default 100.0mOhm ) the parassitic diode forward resistance 
+--rLdRg = (default 100.0mOhm ) the load regulation expressed as resistance 
+--rRev = (default 1.0Ohm ) the parassitic diode reverse resistance 
+--vDrp = (default 200.0mV ) the minimum required voltage drop 
+--vRev = (default 1.0V ) the parassitic diode forward voltage 
+--vTgt =  (must be defined) the target output voltage 
+-Type = Electric Component
+-Number of gates = 2
+-Class = converter
+-Function = is a linear (low drop out) regulator
+
+-Name = cnvSwitch
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, pOut, iIn, iOut, res ) the list of parameter to show in the power tree drawing 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIn = (read only) the input current 
+--iMax = (default 10.0A ) switch maximum forward current used only for warnings (not for simulation) 
+--iOff = (default 1.0uA ) the input current when the device is disabled 
+--iOut = (read only) the output current 
+--iQst = (default 1.0mA ) the current required to supply the switch circuitry 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 2000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--rRev = (default 1.0Ohm ) the parassitic diode forward resistance 
+--res = (default 50.0mOhm ) the on resistance 
+--vMin = (default 2.0V ) the minimum operative input voltage 
+--vRev = (default 1.0V ) the parassitic diode forward voltage 
+-Type = Electric Component
+-Number of gates = 2
+-Class = converter
+-Function = is a switch
+
+-Name = continue
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER = (default 1.0 ) the condition checked not-equal to 0. will restart the current loop 
+-Type = Command
+-Function = restarts the current loop from its beginning
+
+-Name = currency
+-Label = REQUIRED
+-Parameters =
+--base = (default false ) to set the base currency used to compute cost  (true|false)
+--cnvrsnrto = (default 1.0 ) the conversion ratio used to multiply the original currency to compute the BOM amount on the base currency value 
+--dcmldgts = (default 2 ) the number of decimal digits to print after the decimal point for this currency, internally all the values are stored 
+-Type = Command
+-Function = create or modify a new currency convert factor setting its conversion factor, decimal digits and the base currency. To convert any currency to the base currency it is first multipied by its 'conversion factor' then divided by the base currency 'conversion factor' which usually is 1 and the result is rounded up. Every time a currency is set the COST variable is updated with all the blackboxes and nodes money converted to the base currency. That variable can be used to compute the total BOM cost with the internal calculator.
+-Name = define
+-Label = REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER =  (must be defined) A definition to be used as shortcut for write more times the same device requiring a lot of parameter, write the parameters between apex  if the string contains spaces use "
+-Type = Command
+-Function = defines a string to be used as replacement in the following lines. It can be used to define a long set of parameters to be used several times later. Write the string between " 
+
+-Name = delete
+-Label = REQUIRED
+-Parameters = (none)
+-Type = Command
+-Function = a command to delete a blackbox, a node (without any gate linked), variable or currency. It it useful when a power tree is build interatively. 
+
+-Name = do
+-Label = NOT REQUIRED
+-Parameters = (none)
+-Type = Command
+-Function = defines the begin of the iteration do / loop block. To insert a multi line statement in interactive mode ends the required lines by symbol +
+
+-Name = draw
+-Label = REQUIRED
+-Parameters =
+--outputFormat = (default pdf ) the output file format (pdf|svg)
+-Type = Command
+-Function = draws the power tree of the given netlist on a file in pdf or svg file
+
+-Name = drnCurrent
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 255, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, iIn, iTgt ) the list of parameter to show in the power tree drawing 
+--eff = (default 0.0% ) the efficiency used to compute the poewr loss pLos 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIn = (read only) the input current 
+--iOff = (default 1.0uA ) the current drained when the device is disabled 
+--iTgt =  (must be defined) the target constant current drained 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pltPr = (default 3000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--vMax = (default 50.0V ) maximum applicable voltage used only for warnings (not for simulation) 
+--vMin = (default 1.0V ) the minimum operative voltage, below this level the curred linearly reduce to zero 
+-Type = Electric Component
+-Number of gates = 1
+-Class = drainer
+-Function = is constant current drain
+
+-Name = drnPower
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 255, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, iIn, pTgt ) the list of parameter to show in the power tree drawing 
+--eff = (default 0.0% ) the efficiency used to compute the poewr loss pLos 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIn = (read only) the input current 
+--iMax = (default 1.0A ) the maximum drained current 
+--iOff = (default 1.0uA ) the current drained when the device is disabled 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pTgt =  (must be defined) the target drained power 
+--pltPr = (default 3000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--vMin = (default 2.0V ) the minimum operative voltage 
+-Type = Electric Component
+-Number of gates = 1
+-Class = drainer
+-Function = is a constant power drain
+
+-Name = drnResistor
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 255, 255, 0 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pIn, iIn, res ) the list of parameter to show in the power tree drawing 
+--eff = (default 0.0% ) the efficiency used to compute the poewr loss pLos 
+--enb = (default true ) to enable or disable the device (true|false)
+--iIn = (read only) the input current 
+--iMax = (default 10.0A ) maximum forward current used only for warnings (not for simulation) 
+--iOff = (default 1.0uA ) the current drained when the device is disabled 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pIn = (read only) the input power 
+--pLos = (read only) the power loss computed with efficiency 
+--pltPr = (default 3000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--res =  (must be defined) the component resistance 
+--vMin = (default 0.0V ) the minimum operative voltage 
+-Type = Electric Component
+-Number of gates = 1
+-Class = drainer
+-Function = is a resistor
+
+-Name = for
+-Label = REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER =  (must be defined) the array of elements to go through 
+-Type = Command
+-Function = This command defines the begin of the iteration for vector / next which go through all the vector elements. The variable should not be changed within the cycle and should not begin with a value of the vector. To enter a multi line statement in interactive mode complete the lines with symbol +
+
+-Name = help
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER = (default  ) the first chars of the command requiring help  if the string contains spaces use "
+-Type = Command
+-Function = returns the help of all the component beginning with the given text
+
+-Name = iEnd
+-Label = NOT REQUIRED
+-Parameters = (none)
+-Type = Command
+-Function = defines the end of the block if
+
+-Name = if
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER =  (must be defined) the condition checked not-equal to 0. is true 
+-Type = Command
+-Function = defines the begin of the block if condition / iEnd. The block is executed only if the condition after if is not 0. To enter a multi line statement in interactive mode ends the lines with symbol +
+
+-Name = list
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER = (default blackboxes ) the kind of element to list (blackboxes|variables|parsedLines|nodes|currencies|definitions)
+--show = (default name, lbl, lnks ) the list of parameter to show for black boxes 
+-Type = Command
+-Function = lists the variable or blackBox (which is the netlist) or node or parsedLine
+
+-Name = load
+-Label = REQUIRED
+-Parameters = (none)
+-Type = Command
+-Function = a command to load  and parse the lines found in the given fileName
+
+-Name = loop
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER =  (must be defined) the condition checked not-equal to 0. is true 
+-Type = Command
+-Function = defines the end of do / loop condition. The loop restarts from do while the condition is != 0.
+
+-Name = modify
+-Label = REQUIRED
+-Parameters =
+--LOOKAT = (default label ) the parameter that should be looked for the match (label|name)
+--MATCH = (default exact ) the type of match to use in the search (exact|begin|end)
+-Type = Command
+-Function = modifies a parameter of the component already entered in the net list whose [label|name] [matches|begin|end] with given text. Modify expects a single string value for each modified parameter. Therefore if the parameter to modify is longer it needs to be written between ". For instance to modify drwClr it is required to write drwClr="1,2,3" or to modify drwPrm list it requires drwPrm="lbl,vol"
+
+-Name = next
+-Label = NOT REQUIRED
+-Parameters = (none)
+-Type = Command
+-Function = if a new element of the vector is available restart for cycle otherwise end it. The for variable should not be modified inside the block otherwise for will restart from the first element of the vector
+
+-Name = node
+-Label = REQUIRED
+-Parameters =
+--cap = (default 100.0uF ) the capacity linked to the node 
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 128, 128, 128 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, vol, cap ) the list of parameter to show in the power tree drawing 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pltPr = (default 0 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--vBgn = (default 0.0V ) the initial voltage used to begin simulation 
+--vol = (read only) the node voltage 
+-Type = Electric Component
+-Class = voltage node
+-Function = is a node of the power tree. It is intrinsecally defined when a component is liked to one ore more nodes. So usually it is not required to define it. It can be defined to set its capacity and initial voltage. If defined it has to be declared before its usage.
+
+-Name = plot
+-Label = REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER = (default  ) the list of parameters to show 
+--decimalPoint = (default . ) the chars used as decimal point  if the string contains spaces use "
+--fieldsSeparator = (default ; ) the chars used as field separator  if the string contains spaces use "
+--outputFormat = (default png ) the output file format (png|jpeg|bmp|wbmp|gif|csv|screen)
+-Type = Command
+-Function = saves on a file csv, a graphic plot or on the screen the history of the given list of parameters. On graph the first parameter is used for X axis, the outhers are plotted as Ys. If measurement units are defined they are visible on the axis.
+
+-Name = print
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER =  (must be defined) the list electric component of parameters to print 
+-Type = Command
+-Function = prints on screen a parameter of the given node or blackBox with syntax label.parameter. If it is used an integer: label.0|1 the history of last simulation on that port will be printed
+
+-Name = quit
+-Label = NOT REQUIRED
+-Parameters = (none)
+-Type = Command
+-Function = exits Power Tree Designer. Any command given in the interactive session is not saved 
+
+-Name = save
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER = (default  ) the file name where the current parsed lines are saved  if the string contains spaces use "
+-Type = Command
+-Function = saves the current parsed lines (which contains the interactive session input). It is possible to provide an optional fileName otherwise the device fileName is used.
+
+-Name = set
+-Label = REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER = (default {} ) the value, the variable to copy or the calculation to set in the new variable 
+--measurementUnit = (default  ) the measurement unit assigned to the variable  if the string contains spaces use "
+-Type = Command
+-Function = defines a new variable or modify an existing one. The first field is the variable name. It requires a value and a vector. Whenever a vector is required it is possible to use the calculator. The calculator is a simple program working in reverse polish notation between square brackets [ ... ]. The following calculator commands are available:
+-Command % takes 2 arguments from the stack to compute the remind of the divisions the last two values of the stack
+-Command * takes 2 arguments from the stack to times the last two values of the stack
+-Command + takes 2 arguments from the stack to sum two values
+-Command ++ takes 1 arguments from the stack to increment the last vector of the stack
+-Command - takes 2 arguments from the stack to subtract two values
+-Command -- takes 1 arguments from the stack to decrement the last vector of the stack
+-Command / takes 2 arguments from the stack to divides the last two values of the stack
+-Command 0- takes 1 arguments from the stack to negate the last vector of the stack
+-Command 1/ takes 1 arguments from the stack to invert the last vector of the stack
+-Command :=: takes 2 arguments from the stack to check if two number are the same value
+-Command < takes 2 arguments from the stack to check if the first number is less than second
+-Command <= takes 2 arguments from the stack to check if the first number is less than or equal second
+-Command > takes 2 arguments from the stack to check if the first number is greater than second
+-Command >= takes 2 arguments from the stack to check if the first number is greater than or equal second
+-Command abs( takes 1 arguments from the stack to return the absolute value
+-Command and( takes 2 arguments from the stack to return 1 of the last two valueas are not 0
+-Command ceil( takes 1 arguments from the stack to return the ceil given value
+-Command drop( takes 1 arguments from the stack to remove the last value from the stack
+-Command duplicate( takes 1 arguments from the stack to duplicate the last value from the stack
+-Command floor( takes 1 arguments from the stack to return the floor given value
+-Command get( get the given element from a vector
+-Command join( join in a vector the last n elements of the stack
+-Command ne( takes 2 arguments from the stack to check if two number are different value
+-Command not( takes 1 arguments from the stack to return 1 if the last two valueas is 0
+-Command or( takes 2 arguments from the stack to return 1 if at least one of the last two valueas are not 0
+-Command pow( takes 2 arguments from the stack to rise to the given power
+-Command sign( takes 1 arguments from the stack to return the sign
+-Command size( takes 1 arguments from the stack to return the size of the last vector of the stack
+-Command sqr( takes 1 arguments from the stack to return the square of the given value
+-Command sqrt( takes 1 arguments from the stack to return the square root of the given value
+-Command sumup( takes 1 arguments from the stack to return the sum of the elements of the last vector of the stack
+-Command swap( takes 2 arguments from the stack to swaps the last two vectors from the stack
+-Command vectorLinear( takes 3 arguments from the stack to create a vector from start value, number of points, end value
+-Command vectorStep( takes 3 arguments from the stack to create a vector from start value, with step value up to end value
+-Command xor( takes 2 arguments from the stack to return 1 if one but not both of the last two valueas are not 0
+-Command | join in a vector all the elements of the stack
+
+
+-Name = setup
+-Label = NOT REQUIRED
+-Parameters =
+--decimalDigits = (default 1 ) the number of decima digit to show 
+--drawBackGroundColor = (default color RGB components: 255, 255, 255 ) the background color used to color the page of the drawing 
+--drawBoxHeight = (default 100 ) the height (in pixels) of the boxes used to draw the power tree 
+--drawBoxSpaceX = (default 40 ) the x spacing (in pixels) between boxes 
+--drawBoxSpaceY = (default 40 ) the y spacing (in pixels) between boxes 
+--drawBoxWidth = (default 150 ) the width (in pixels) of the boxes used to draw the power tree 
+--drawForeGroundColor = (default color RGB components: 0, 0, 0 ) the foreground color used to color the labels and boxes of the drawing 
+--integratorAlgorithm = (default rungekutta3 ) sets the integration algorithm to use. Euler needs 1 step to compute the next node voltages. Midpoint, Heun and Ralston 2 steps. RungeKutta3  3 steps, while the other RungeKutta needs 4 steps for 1 point. RungeKutta3 is the best compromise speed and transient accuracy. Euler is the fastest and can be used safely if a steady state analysis is performed. RungeKutta4 methods are the most accurate but also require to reduce the dvMax in order to get an accurate transient simulation. (rungekutta3|euler|midpoint|rungekutta4bis3/8|rungeKutta4|ralston|heun)
+-Type = Command
+-Function = sets up the basic behaviour of the power tree designer: decimal digits, ...
+
+-Name = simulateSteady
+-Label = NOT REQUIRED
+-Parameters =
+--diSteadyMax = (default 1.0nA ) the maximum current variation on the current at worst node to be in steady state 
+--dtBegin = (default 1.0ns ) the simulation initial time step 
+--dtMax = (default 1.0us ) the simulation max time step 
+--dtMin = (default 1.0ps ) the simulation min time step 
+--dvMax = (default 1.0mV ) the maximum node voltage variation require to decrease time step 
+--dvMin = (default 10.0uV ) the minimum node voltage variation require to increase time step 
+--measurementUnit = (default  ) the measurement unit to use for each parameter stepped 
+--parameter = (default  ) the parameter to step 
+--savePoints = (default 1000 ) how many calculated point has to be saved for a simulation. First and last are saved by default 
+--saveTransient = (default false ) choose if save transient analisys. If the transient is not saved the source are set constant low value. (true|false)
+--stopAtSteadyState = (default true ) choose if stop when steady state is reached (true|false)
+--tEnd = (default 1.0s ) the simulation end time 
+--tSave = (default 0.0s ) the time to begin data saving 
+--values = (default  ) the vector with values to simulate 
+-Type = Command
+-Function = runs the transient simulation stopping as soon as a steady state is reached only the last point is saved on history
+
+-Name = simulateTransient
+-Label = NOT REQUIRED
+-Parameters =
+--diSteadyMax = (default 1.0nA ) the maximum current variation on the current at worst node to be in steady state 
+--dtBegin = (default 1.0ns ) the simulation initial time step 
+--dtMax = (default 1.0us ) the simulation max time step 
+--dtMin = (default 1.0ps ) the simulation min time step 
+--dvMax = (default 1.0mV ) the maximum node voltage variation require to decrease time step 
+--dvMin = (default 10.0uV ) the minimum node voltage variation require to increase time step 
+--savePoints = (default 1000 ) how many calculated point has to be saved for a simulation. First and last are saved by default 
+--saveTransient = (default true ) choose if save transient analisys. If the transient is not saved the source are set constant low value. (true|false)
+--stopAtSteadyState = (default false ) choose if stop when steady state is reached (true|false)
+--tEnd = (default 1.0s ) the simulation end time 
+--tSave = (default 0.0s ) the time to begin data saving 
+-Type = Command
+-Function = runs the transient simulation up to endTime saving the history. It is useful to verify turn on and off sequence and over shoots.
+
+-Name = srcBattery
+-Label = REQUIRED
+-Parameters =
+--avlblCpcty = (read only) the available capacity after simulation  
+--cpcty = (default 3.6kC ) The battery capacity expressed in Culomb, it is usually provided in Ah: 1Ah=3600C 
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 255 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pOut, iOut, vBtt, cpcty ) the list of parameter to show in the power tree drawing 
+--eRes = (default 20.0mOhm ) The battery external resistance, together to the external resistance it models the short DC pulse current capability than the DC current 
+--eff = (default 0.0% ) the efficiency used to compute the power loss pLos 
+--enb = (default true ) to enable or disable the device (true|false)
+--iCap = (default 100.0mF ) The battery internal capacitor, together to the external resistance it models the short DC pulse current capability than the DC current 
+--iOut = (read only) the output current 
+--iRes = (default 80.0mOhm ) The battery internal resistance used to charge its internal capacitor.It models the long DC current capability of the battery 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--name = (read only) the component name 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 1000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--rchrgbl = (default true ) An input current increases the internal capacity, if the battery is not rechargeable that rises a warning (true|false)
+--v0 = (default 3.2V ) The battery voltage at 0% (minimum) capacity 
+--v10 = (default 3.5V ) The battery voltage at 10% capacity 
+--v100 = (default 4.2V ) The battery voltage at 100% maximum (full charge) capacity 
+--v90 = (default 3.9V ) The battery voltage at 90% capacity 
+--vBtt = (read only) the internal battery voltage value during simulation  
+-Type = Electric Component
+-Number of gates = 1
+-Class = sourcer
+-Function = is a battery
+
+-Name = srcCurrent
+-Label = REQUIRED
+-Parameters =
+--aHgh = (default 10.0A ) the high peak for the waveform 
+--aLow = (default 0.0A ) the voltage value for dc, the low peak for other waveforms, the value used for steady state simulation 
+--aVct = (default {} ) the list of A points to use for a pwl waveform 
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 255 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pOut, iOut, iTgt ) the list of parameter to show in the power tree drawing 
+--eff = (default 0.0% ) the efficiency used to compute the power loss pLos 
+--enb = (default true ) to enable or disable the device (true|false)
+--iOut = (read only) the output current 
+--iTgt = (read only) the last current value during simulation  
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--nPrds = (default 0 ) is used to set the number of periods if the wavefor is periodic, <= 0 means infinity 
+--name = (read only) the component name 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 1000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--res = (default 1.0kOhm ) the output resistance 
+--tDly = (default 0.0s ) the delay of the trapezoidal or phase for sin waveform 
+--tFll = (default 10.0ms ) the fall time for trapezoidal wave 
+--tPls = (default 500.0ms ) the pulse duration for trapezoidal wave 
+--tPrd = (default 1.0s ) the period of the waveform, use wPrdc if the waveform has to repeat aftera 1 period 
+--tRse = (default 10.0ms ) the rise time for trapezoidal wave 
+--tVct = (default {} ) the list of time points to use for a pwl waveform 
+--vMax = (default 5.0V ) the maximum output voltage 
+--wPrdc = (default false ) is used to set if the wavefor is periodic, in case tPrd is used for period (true|false)
+--wTyp = (default dc ) is used to set the waveform type: 
+---dc constant waveform requires (v/i)low to be defined
+---pwl piece wise linear waveform requires to define tVct=[t0 t1 t2 .. tn |] (v/i)Vct=[y0 y1 y2 .. yn |] were ti are absolute time instant if positive, if negative it is considered time increment respect to the previous step
+---saw saw wave requires to define: (v/i)Low the low voltage, (v/i)Hgh the high voltage, tRse the rise time, tFll the fall time, and tPrd the period
+---sin constant waveform requires (v/i)low to be defined
+---tri triangulare wave requires to define: (v/i)Low the low voltage, (v/i)Hgh the high voltage, and tPrd the period
+---trp trapezoidal wave requires to define: (v/i)Low the low voltage, (v/i)Hgh the high voltage, tDly the high pulse delay, tRse the rise time, tPls the high pulse time, tFll the fall time, tPrd the period (dc|pwl|trp|saw|tri|sin)
+-Type = Electric Component
+-Number of gates = 1
+-Class = sourcer
+-Function = is a constant current source
+
+-Name = srcVoltage
+-Label = REQUIRED
+-Parameters =
+--cst = (default 0.00€ ) the component cost  Every money amout should be followed by its currency symbol. If the symbol was not used before it is automatically added to the currency database. If no currency is specified the base currency is used.
+--drwClr = (default color RGB components: 0, 255, 255 ) the fill color used for drawing  
+--drwLnk = (default full ) how should be draw the link from child to his father (full|dash|cpChild|void)
+--drwPrm = (default lbl, enb, pOut, iOut, vTgt ) the list of parameter to show in the power tree drawing 
+--eff = (default 0.0% ) the efficiency used to compute the power loss pLos 
+--enb = (default true ) to enable or disable the device (true|false)
+--iMax = (default 5.0A ) the maximum output current 
+--iOut = (read only) the output current 
+--lbl = (read only) the component label 
+--lnks = (read only) the component links 
+--nPrds = (default 0 ) is used to set the number of periods if the wavefor is periodic, <= 0 means infinity 
+--name = (read only) the component name 
+--pLos = (read only) the power loss computed with efficiency 
+--pOut = (read only) the output power 
+--pltPr = (default 1000 ) the draw priority, the lower more on the left is drawed. By default source have 1000, converter 2000 and drain 3000. 
+--res = (default 100.0mOhm ) the output resistance 
+--tDly = (default 0.0s ) the delay of the trapezoidal or phase for sin waveform 
+--tFll = (default 10.0ms ) the fall time for trapezoidal wave 
+--tPls = (default 500.0ms ) the pulse duration for trapezoidal wave 
+--tPrd = (default 1.0s ) the period of the waveform, use wPrdc if the waveform has to repeat aftera 1 period 
+--tRse = (default 10.0ms ) the rise time for trapezoidal wave 
+--tVct = (default {} ) the list of time points to use for a pwl waveform 
+--vHgh = (default 10.0V ) the high peak for the waveform 
+--vLow = (default 0.0V ) the voltage value for dc, the low peak for other waveforms, the value used for steady state simulation 
+--vTgt = (read only) the last voltage value during simulation  
+--vVct = (default {} ) the list of V points to use for a pwl waveform 
+--wPrdc = (default false ) is used to set if the wavefor is periodic, in case tPrd is used for period (true|false)
+--wTyp = (default dc ) is used to set the waveform type: 
+---dc constant waveform requires (v/i)low to be defined
+---pwl piece wise linear waveform requires to define tVct=[t0 t1 t2 .. tn |] (v/i)Vct=[y0 y1 y2 .. yn |] were ti are absolute time instant if positive, if negative it is considered time increment respect to the previous step
+---saw saw wave requires to define: (v/i)Low the low voltage, (v/i)Hgh the high voltage, tRse the rise time, tFll the fall time, and tPrd the period
+---sin constant waveform requires (v/i)low to be defined
+---tri triangulare wave requires to define: (v/i)Low the low voltage, (v/i)Hgh the high voltage, and tPrd the period
+---trp trapezoidal wave requires to define: (v/i)Low the low voltage, (v/i)Hgh the high voltage, tDly the high pulse delay, tRse the rise time, tPls the high pulse time, tFll the fall time, tPrd the period (dc|pwl|trp|saw|tri|sin)
+-Type = Electric Component
+-Number of gates = 1
+-Class = sourcer
+-Function = is a constant voltage source
+
+-Name = wEnd
+-Label = NOT REQUIRED
+-Parameters = (none)
+-Type = Command
+-Function = defines the end of the iterative while-wEnd block
+
+-Name = while
+-Label = NOT REQUIRED
+-Parameters =
+--UNLABELLEDPARAMETER =  (must be defined) the condition checked not-equal to 0. is true 
+-Type = Command
+-Function = defines the begin of the iteration while condition / wEnd which loops while the condition is not 0. To enter a multi line statement in interactive mode ends the lines with symbol +
+
+Help end.
+
+> 
